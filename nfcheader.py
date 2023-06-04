@@ -62,9 +62,3 @@ class PN532_board:
         print(card_info.hex(' '))
 
         return
-
-
-unittest = PN532_board()
-
-#unittest.wake_up()
-unittest.det_card()
