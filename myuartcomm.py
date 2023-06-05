@@ -17,9 +17,10 @@ def recv_data(boardport):
 
     #print("waiting", end='', flush=True)
     while boardport.in_waiting ==0:
-        time.sleep(0.002)
+        #time.sleep(0.002)
     #    print(".", end="", flush=True)
     #print("")
+        pass
 
     while boardport.in_waiting > 0:
         recved_data.extend(boardport.read(boardport.in_waiting))

@@ -42,8 +42,9 @@ for blk_i in range(4, 64):
     if _DEBUG == True:
         print(blk_i, ": ", data)
 
+data = data[2:]
 print("data from card: ")
 print(len(data))
-print(data)
+print(data.hex(' '))
 
 os_final_exp3_nfc.finishjob()
