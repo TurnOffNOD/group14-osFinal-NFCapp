@@ -50,6 +50,11 @@ data = data[2:]
 
 os_final_exp3_nfc.finishjob()
 
-data_prased = ndef.NdefMessage(data)
-data_payload =data_prased.payload
-print(data_prased)
+data_prased = ndef.message_decoder(data)
+d=[]
+while True:
+    try:
+        d.append(next(data))
+    except StopIteration:
+        break
+print(d)
