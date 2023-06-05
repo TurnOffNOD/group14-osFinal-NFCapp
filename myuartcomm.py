@@ -15,12 +15,15 @@ def send_data(boardport, data):
 def recv_data(boardport):
     recved_data = bytearray()
 
+    #print("waiting", end='', flush=True)
     while boardport.in_waiting ==0:
-        pass
+        time.sleep(0.002)
+    #    print(".", end="", flush=True)
+    #print("")
 
     while boardport.in_waiting > 0:
         recved_data.extend(boardport.read(boardport.in_waiting))
-        time.sleep(0.025)
+        time.sleep(0.01)
 
     #print("Recv: ", recved_data.hex(' '))
     return recved_data
