@@ -2,9 +2,10 @@
 
 import nfcheader
 from nfcheader import _DEBUG
-print(_DEBUG)
+#print(_DEBUG)
 import serial
 import argparse
+import ndef
 
 get_opts = argparse.ArgumentParser(description='avoid duplicate wake up with args')
 
@@ -43,8 +44,11 @@ for blk_i in range(4, 64):
         print(blk_i, ": ", data)
 
 data = data[2:]
-print("data from card: ")
-print(len(data))
-print(data.hex(' '))
+#print("data from card: ")
+#print(len(data))
+#print(data.hex(' '))
 
 os_final_exp3_nfc.finishjob()
+
+data_prased = ndef.message_decoder(data)
+print(data_prased)
