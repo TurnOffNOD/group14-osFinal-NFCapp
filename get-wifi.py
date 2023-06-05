@@ -54,7 +54,7 @@ data_prased = ndef.message_decoder(data)
 d=[]
 while True:
     try:
-        d.append(next(data))
+        d.append(next(data_prased))
     except StopIteration:
         break
 print(d)
