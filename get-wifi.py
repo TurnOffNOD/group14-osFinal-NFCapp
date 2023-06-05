@@ -57,4 +57,8 @@ while True:
         d.append(next(data_prased))
     except StopIteration:
         break
-print(d)
+
+print(type(d[0]))
+print(d[0])
+print(d[0].get_attribute("ssid", 1))
+print(d[0].get_attribute("credential"))
